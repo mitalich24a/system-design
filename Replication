@@ -1,1 +1,93 @@
+Copy Data to multiple devices for 
+- Fault Tolerance 
+- High avaailabilty 
+- High Scalability
 
+Data replication can be achieved through 
+leader-based push or pull mechanisms where a leader propagates changes to followers, 
+or through leaderless approaches where clients write to multiple replicas and consistency is maintained via versioning and repair. 
+The choice depends on trade-offs between throughput, latency, and consistency.
+
+Core Models 
+1) Leader-Follower Push based 
+
+    Client → Leader → Leader writes → Leader pushes updates → Followers → Followers apply changes
+    
+    Leader sends 
+      WAL (Write Ahead Log)
+      Row changes
+
+    Latency           Medium        Wait for push
+    Throughput        Medium        Leader does extra work
+    Consistency       Strong        Leader controls replication 
+    Availability      Medium        Leader is bottleneck
+
+    OptimisedFor      Strong control and consistency 
+    Cost              Leader bottleneck, Scaling limited 
+    
+
+2) Leader-Follower Pull based
+
+    Client → Leader → append log 
+    Followers → “give me data after offset X” → pull data → append locally
+    
+    Followers request missing data
+    Leader just serves log
+    
+    Latency           Medium        Depends on polling
+    Throughput        High        Leader doesn’t push
+    Consistency       Depends       Followers may lag
+    Availability      High          Followers control speed
+  
+    OptimisedFor      High throughput and Scalability 
+    Cost              Replica lag & Slightly weaker consistency
+
+
+
+3) Leaderless Multi-Writer
+
+    No Single leader
+  
+    Client → Node A, Node B, Node C (replicas)
+    Client → Node A → forwards to B, C
+  
+    Application client
+    DB client library
+    Coordinator node
+    Proxy Server
+  
+    Each node stores data independently
+    Versioning added
+    Repair fixes inconsistencies later
+
+    Latency           Low              No coordination
+    Throughput        Very High        Parallel writes
+    Consistency       Eventual         Conflicts possible
+    Availability      Very High        No single point
+  
+    OptimisedFor      Availability & multi-region 
+    Cost              Conflict resolution & Complexity
+
+
+4) Log Shipping (WAL)
+
+    Leader → write WAL → send WAL to followers → followers replay WAL
+
+    Latency           Medium           
+    Throughput        High             Sequential log
+    Consistency       Strong           Exact replay
+  
+    OptimisedFor      Exact replication
+    Cost              Replay delay & Tight coupling
+
+5) Snapshot + Incremental Sync
+
+    New node joins → Copy full snapshot → Then apply logs incrementally
+
+    Latency           High initially     Full copy    
+    Throughput        Medium             Heavy data transfer
+    Consistency       Strong             Syncs fully
+  
+    OptimisedFor      Bootstrapping new nodes
+    Cost              Expensive initial sync
+    
