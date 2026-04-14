@@ -1,1 +1,5 @@
+Leader election is required when there is a single node responsible for writes (leader/primary).
 
+1) Coordinator-Based Election
+2) Consensus-Based Election
+3) Manual / External Election
