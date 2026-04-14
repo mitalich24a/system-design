@@ -1,1 +1,9 @@
+To detect failure
 
+1) HeartBeats
+2) Time Based
+3) Gossip Based
+4) Lease Based
+5) External Monitoring
+6) TCP Connection Failure 
+7) Phi Accrual Failure Detector
