@@ -1,1 +1,13 @@
+Tradeoff (Latency, Througput, Availability, Consistency)
 
+Log tracking
+
+Consensus
+
+Versioning
+
+Repair (Anti Entropy)
+
+High Watermark
+
+Client-controlled Consistency Levels
