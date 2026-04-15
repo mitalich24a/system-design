@@ -1,0 +1,70 @@
+Data = actual information
+Metadata = data about data
+=============================================================================
+Data can resides on multiple layers
+CPU Cache (Volatile)            L1/L2
+RAM (Volatile)                  Redis
+DISK (persistence)              
+  SDD
+  HDD
+=============================================================================
+Time to Read 1MB Sequentially  
+  CPU Cache          1/1000000 ms
+  RAM                1/1000 ms
+  SDD                1/4 ms
+  HDD                20 ms
+=============================================================================
+Data must be structured, indexed, and queried to meet performance, durability, and availability goals.
+
+  Following are the ways 
+
+    SQL
+      Table : Row * Cols
+      
+      ACID
+      Transction 
+      Strong Consistency 
+      
+      Vertical Scaling 
+      Sharding
+    -----------------------------------------------------------------------------------
+    No-SQL
+        Scaling + Flexibilty
+        
+        Key Value
+            Fast Read/Write 
+            Eventual Consistency 
+          
+        Graph
+            Relationships
+            Queries like “friends of friends”
+            Social network, Recommendations
+            Neo4j
+          
+        Column
+            Massive Write at Scale
+            Time Series Data, Logs
+            Cassandra
+            
+        Document
+            Flexible Schema like Json
+            Product catalogs
+            MongoDB
+        
+=====================================================================================
+
+Storage System define how data is physically stored, accessed, and persisted to ensure durability and efficient retrieval.
+
+  File Storage
+  
+  Block Storage
+  
+  Object Storage
+  
+==========================================================================================
+  
+Access (Read/Write) Pattern
+  Sequential 
+  Random
+          
+
