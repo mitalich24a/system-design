@@ -1,4 +1,8 @@
-To detect failure
+Modern distributed systems rarely rely on a single failure detector — 
+they combine heartbeats, leases, and probabilistic detectors like Phi to balance speed, accuracy, and scalability.
+
+
+Methods To detect failure
 
 1) HeartBeats
 2) Time Based
