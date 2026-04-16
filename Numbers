@@ -1,5 +1,8 @@
-Bit
-Byte
+8 Bits = 1Byte
+
+Data Computation in Bytes 
+Network Computation in Bits
+-----------------------------------------------
                         Pow(10)    Pow(2)
 Thousand        KB        3          10
 Million         MB        6          20
