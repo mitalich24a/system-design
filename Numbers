@@ -30,5 +30,8 @@ Load Balancer
   else
       1M+
 
-CPU, NIC are bottleneck for high RPS
+High RPS Bottleneck
+  CPU, 
+  NIC, 
+  Connection limits (file descriptor)
 --------------------------------------------------------------------------------
