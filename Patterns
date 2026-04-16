@@ -1,1 +1,38 @@
+Scaling Reads
+  Read Traffic bottleneck Ex Instagram
+  Read:Write = 100:1
 
+  Index, 
+  Query Tune, 
+  Denormalization
+  Cache (Application Server In-Memory) & CDN
+  Sharding 
+  Replicas
+
+  HotKeys (Traffic remain uneven even if data is distributed)
+    Scale wont help so dilute across (Space, Time, Requests)
+    
+    Replicas
+    Cache & CDN
+    Coalescing & Batching
+    
+  
+
+=========================================================================
+Scaling Writes
+
+==========================================================================
+Realtime Updates
+
+==========================================================================
+Long Running Task
+
+
+==========================================================================
+Handling contention
+
+=========================================================================
+Large Blob 
+
+=========================================================================
+Multi-Step Process
