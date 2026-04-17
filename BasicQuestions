@@ -1,16 +1,34 @@
 1) How do I serve data faster?
+        Cache, CDN, Precompute, Fanout
+        Feed (Instagram, Twitter, News), Product Listing
 
 2) How do I absorb massive writes safely?
+        Queue, Batch, Streaming Processing
+        Logging, Analytics-pipeline,Ad click tracking, Web crawler
 
 3) How do I push updates instantly?
-
+        SSE, WebSockets, Pub/Sub, Event streaming
+        Chat, Notifications, Live sports updates
+        
 4) How do I find fast in huge data?
+        Indexing(Inverted Index, Trie), Ranking, Cache Hot queries
+        Autocomplete, Search engine, 
 
 5) How do I store + deliver large(very large) files efficiently?
+        Blob storage, CDN, Async Processing
+        YouTube, Instagram-Photos, File upload
 
 6) How do I avoid double spend / race conditions?
+        Distributed locks & Transactions, Idempotency keys, Strong consistency design
+        Payment system, Ticket booking, Stock trading
 
 7) How do I generate unique, scalable IDs?
+        Hashing, Base62 encoding, Snowflake ID generator
+        TinyURL, OrderID
+
+8) How do I match nearest entities fast?
+      Geohash / quadtrees, Matching engine, Real-time updates
+      Uber, Swiggy, Nearby friends
 
 
 
