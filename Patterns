@@ -1,3 +1,10 @@
+- Recognize familiar patterns quickly.
+- Recall the right approaches when needed.
+- Reason clearly about trade-offs.
+- Be fluent.
+
+Because real systems composed from many.
+=====================================================================
 Scaling Reads
   Read Traffic bottleneck Ex Instagram
   Read:Write = 100:1
@@ -15,21 +22,80 @@ Scaling Reads
     Replicas
     Cache & CDN
     Coalescing & Batching
-    
-  
 
 =========================================================================
 Scaling Writes
+    Distribution, Absorb, and Protection
+
+    Sharding
+      Key is crucial
+
+    Brusts
+      Normal     50K RPS
+      Burst      500K RPS
+      Capacity   100K RPS
+
+      Incoming Rate > Processing Rate
+
+      Absorb
+        Buffering with queue
+          Smooths short spikes
+          Backlog builds
+
+      Shedding
+          Drop Requets
+            API Gateway : 429 Too Many Requests
+            At queue producer
+            Priority-based
+
+      Batching
 
 ==========================================================================
 Realtime Updates
 
+  Distributing Updates
+      Client Long Polling          Inefficent due to repetative request
+      SSE                          One way, http long lived keep alive
+      Websocket                    Bi-directional & Low latency
+
+  Update Production & Distribution
+      Producer → Pub/Sub → Consumers → Push to clients
+
+  Collaborative / Coordination
+      Multiple users interacting with same shared state
+        Stateful handling
+        Keep related users on same machine
+
+        Consistent hashing (user → node)
+        Sticky sessions (for WebSockets)
+        Shared coordination layer (Redis, CRDTs)
+
 ==========================================================================
 Long Running Task
 
+  Don’t block client. 
+  Acknowledge fast, 
+  Process async.
+
+  Accept Req and persist request meta data
+  Queue the job
+    Redis       Simple
+    SQS         Retry & Dead Letter
+    Kafka       Replay
+
+  Workers extract and exe and update meta data
+      QUEUED → PROCESSING → COMPLETED / FAILED
+
+  Client get response back by
+    Polling, 
+    Webhooks, 
+    or real-time push (SSE/WebSockets)
 
 ==========================================================================
 Handling contention
+
+
+
 
 =========================================================================
 Large Blob 
