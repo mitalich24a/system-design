@@ -1,0 +1,54 @@
+Reconciliation = Detect + Compare + Correct
+
+-Detecting early enough
+-Correcting safely 
+
+When can it happen
+1) Multiple Source of truth
+  - Different services have their own DBs
+  - Same entity exists in multiple places
+2) Async Communication
+3) External System 
+4) Eventual Consistency Req
+5) Retries 
+6) Buisness Rules Criticalness 
+
+What can happen
+1) Missing data
+2) Duplicate data
+3) Diverging state
+4) Partial completion
+5) External mismatch
+
+Detect
+1) Event-based detection
+    Missing event, Duplicate event, Out-of-order events
+2) Time-based detection
+    Expected within X time but didn’t happen
+3) Trigger-based detection
+    Hook into workflows
+4) Periodic scanning
+    Run jobs to find inconsistencies
+5) Constraint violation detection
+    Rules broken
+
+Compare
+1) Key-based comparison
+2) Field-level comparison
+3) Checksum / hash comparison
+4) Version comparison
+5) Event log comparison
+6) Aggregate comparison
+7) External comparison
+
+Correct
+1) Retry
+2) Replay
+3) Upsert / Patch state
+4) Compensation
+5) Deduplication
+6) Merge
+7) Manual intervention
+
+
+
