@@ -1,0 +1,13 @@
+System doesn’t break just because something broke
+
+Replication
+  Keep multiple copies of data/services
+Redundancy
+  Extra backup components
+Failover
+  Automatically switch to backup system
+  https://github.com/mitalich24a/system-design/blob/main/Failover
+Retries
+  Try again if request fails
+Circuit breaker
+  Stop calling a failing service temporarily
