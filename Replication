@@ -107,4 +107,11 @@ Erasure Coding
     - Slightly slower recovery
     
     - used HDFS, S3
+-------------------------------------------------------------------------------------------------------
+Data Mirroring 
+    
+    Creating an exact real-time copy of data from one system to another system
+    1:1 copy
+    Synchronous or near real-time
+    Used for high availability / disaster recovery
         
