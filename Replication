@@ -90,4 +90,21 @@ Core Models
   
     OptimisedFor      Bootstrapping new nodes
     Cost              Expensive initial sync
+
+---------------------------------------------------------------------------------------------------
+Erasure Coding
+    Instead of just copying data (like replication), it:
     
+    Splits data into pieces
+    Adds extra “parity” pieces
+    So even if some pieces are lost, you can still reconstruct the original data
+    
+    
+    - Less storage overhead than replication
+    - High durability
+    
+    - More CPU cost to encode/decode
+    - Slightly slower recovery
+    
+    - used HDFS, S3
+        
