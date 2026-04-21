@@ -1,0 +1,31 @@
+RPC
+  calling a function on a remote machine
+
+REST API
+  resource-based architectural style over HTTP
+  HTTP/1.1
+  data format
+    JSON
+
+  best for Public APIs
+
+gRPC
+  Implementation of RPC using modern tech
+  Strong contracts
+    proto
+  data format 
+    binary 
+  High performance
+    https 2.0
+    multiplexing
+
+  internal microservices 
+
+
+
+TCP 
+  Reliable, Ordered, Connection-based
+
+UDP
+  Unreliable (loss possible), No ordering guarantee, Low latency
+
