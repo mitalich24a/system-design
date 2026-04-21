@@ -66,5 +66,28 @@ Storage System define how data is physically stored, accessed, and persisted to 
 Access (Read/Write) Pattern
   Sequential 
   Random
+=========================================================================================
+Optimization
+
+  Reduction
+    Compression
+    Compaction
+    Dedup
+    Sampling
+    Down-sampling
+    Aggregation
+    
+
+  LifeCycle
+    Tiering
+      Hot
+      Warm
+      Cold
+    Retention
+
+  Access optimization
+    Caching
+    Indexing
+    Precomputation/materialized views
           
 
