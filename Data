@@ -57,7 +57,7 @@ Data must be structured, indexed, and queried to meet performance, durability, a
             Prometheus, InfluxDB
   
           Geospatial Databases
-            PostGIS, GeoHash, H3, S2
+            PostGIS, GeoHash, H3
           
           Full-text Search Databases
             Elasticsearch, Apache Solr
