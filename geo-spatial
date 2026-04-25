@@ -1,0 +1,77 @@
+Problem : Find Nearby Things
+
+SQL Box Query 
+  SELECT *
+  FROM business
+  WHERE lat BETWEEN 12.90 AND 13.00
+  AND lon BETWEEN 77.50 AND 77.60;
+
+  Box search, not a true distance search
+
+  CREATE INDEX idx_lat ON business(lat); 
+  CREATE INDEX idx_lon ON business(lon);
+
+  SQL indexes are 1D (sorted lists)
+
+  Data is 2D(lat, lon), Indexes are 1D
+
+  SQL cannot efficiently index multi-dimensional proximity using simple indexes
+
+Convert data 2D → 1D 
+  Deterministic and Continuous
+  Accurate
+
+  Geohash
+    Generate GeoHash
+      Map Earth to Rectangle
+      Generate using 0s and 1s of quadrant of Rectangle
+      Encode Binary32 (22 + 10)
+  
+    Prefix Matching 
+      Cons
+        Same prefix” ≠ same physical distance
+        Boundary Issue
+          Some points inside rectangle → farther than expected 
+          Some points just outside → closer but missed
+  
+  
+  Google S2
+    Generate Cell-Ids
+      Map Earth(Sphere) to Cube
+      Draw a line from Earth center → Point → extend to cube
+      Hilbert curve of Grid
+  
+    Near by places have closer Cells-Ids
+
+Convert location → tree path
+  Quatree
+    build in-memory tree structure
+    Create a Note for Lat and Long 
+    Split in 4 quadrant until meet criteria
+
+    leaf node
+      lat & lon 
+      100 Buisness ID
+
+    Internal node
+      lat, lon, 
+      4 child nodes
+
+    L = 3I + 1
+    High Server Up time
+
+
+Data Storage
+(lat, lon) → cell_id (Geohash / S2)
+business_id → cell_id
+INDEX(cell_id)
+
+Query Time
+user(lat, lon) → user_cell
+user_cell → list_of_cells (covering radius R)
+
+Fetch
+SELECT *
+FROM business
+WHERE cell_id IN (list_of_cells)
+    
