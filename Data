@@ -33,7 +33,8 @@ Data must be structured, indexed, and queried to meet performance, durability, a
         
         Key Value
             Fast Read/Write 
-            Eventual Consistency 
+            Eventual Consistency
+            DynamoDB, Redis
           
         Graph
             Relationships
@@ -50,7 +51,22 @@ Data must be structured, indexed, and queried to meet performance, durability, a
             Flexible Schema like Json
             Product catalogs
             MongoDB
-        
+
+      Specialized Databases (optimized for specific query patterns)
+          Time-Series Databases
+            Prometheus, InfluxDB
+  
+          Geospatial Databases
+            PostGIS, GeoHash, H3
+          
+          Full-text Search Databases
+            Elasticsearch, Apache Solr
+          
+          AI stack Vector Databases
+            Pinecone, Weaviate
+          
+          Ledger / Blockchain Databases
+            Amazon QLDB
 =====================================================================================
 
 Storage System define how data is physically stored, accessed, and persisted to ensure durability and efficient retrieval.
