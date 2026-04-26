@@ -1,0 +1,66 @@
+Provides Direction & Navigation 
+
+GeoCoding
+  address → (lat, lon)
+
+GeoHash
+  (lat, lon) → string
+  Finds near by using prefix matching
+
+Tiles
+  Break world into small fixed regions
+  Tile Creation
+    GeoHash/S2/QuadTree
+
+  Map
+    Stored in S3 and cached at CDN
+    Resolution 
+      1-21
+    Format
+      Raster(PNG)
+      Vector
+        Rendered on client using WebGL
+
+  Route
+    Roads : Edge
+    Intersection : Node
+    Stored in S3 and cached aggressively at Service
+
+Graph
+  Nodes Intersection
+  Edges Roads
+  Road Hierarchy
+
+    Level 1 → Local roads
+    Level 2 → Arterial roads
+    Level 3 → Highways
+
+    Reduces search space drastically
+
+
+Navigation
+  1) Input Source, Destination
+  2) GeoCoding
+  3) GeoHashing
+  4) Tile Loading
+  5) Find Top-K paths
+  6) ETA for each using traffic live and historic data, and using ML
+  7) Rank each and return 
+
+Location 
+  1) Client → Sends Location every few seconds
+  2) Storage
+      Casandra
+      (userId, timestamp) → (lat, lon)
+  3) Kafka for down-streaming service
+
+
+Tiles : Reduce memory + CPU, Caching,
+Hierarchy : Avoid scanning all roads, Jump to highways first
+Cassandra : Heavy writes (location updates), availablity > consistency
+
+
+
+
+    
+  
