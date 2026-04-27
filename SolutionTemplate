@@ -1,0 +1,51 @@
+1) Title of System (0 Min)
+
+2) Functional Specs (5 Min)
+      User
+        Action
+      System
+        Features
+
+      What user does & how system responds
+
+3) Non-Functional Specs (10 Min)
+          Read
+          Write
+        
+          Latency
+          Throughput
+        
+          Scalability
+              QPS/TPS
+              Data Volume
+              DAU
+          Concurrency
+        
+          Availability
+        
+          Fault Tolerance
+        
+          Durability
+          Consistency
+        
+          Security
+      
+                      mnemonics
+                      (Rich Women 
+                      Love Tech 
+                      Smart Coders 
+                      Always 
+                      Fix 
+                      Dumb Code 
+                      Securely)
+
+          Additional 
+              Cost 
+              System Evolution 
+
+
+3) E2E Flow (10 Min)
+
+4) Deep Dive (20 Min)
+
+5) Summarise (5 Min)
