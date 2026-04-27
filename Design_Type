@@ -1,0 +1,29 @@
+Booking/Reservation
+  Concurrency 
+    Double Payment 
+      Idempotency 
+    2 user booking same time
+      Locks
+        Types
+          Pessimistic
+          Optimistic 
+          Constraints Check
+        Factors
+          Latency 
+          Data Contention 
+
+  QPS
+    Sharding 
+    Caching
+      async update
+      CDC
+
+Basic Flow
+  Search
+    No Lock 
+  Select
+    Soft Lock Redis TTL
+  Book/Order
+    Optimistic 
+  Payment
+    Pessimistic
