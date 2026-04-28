@@ -1,0 +1,52 @@
+Traversing an ordered dataset
+Continuing a stream of ordered data efficiently
+
+Display Search result on Screen
+  Next Button 
+  1, 2, 3, 4 
+  Continuous Scrolling 
+
+Offset
+  SQL
+    SELECT * FROM users ORDER BY id LIMIT 10 OFFSET 1000;
+    Skip 1000 rows, Return next 10
+    Waste work
+    Wrong result for dynamic data
+
+Cursor
+  Application-level continuation pointer
+  
+  SQL
+    SELECT * FROM users WHERE id > 1000 ORDER BY id LIMIT 10;
+    Uses index → jumps directly to position
+
+  Token 
+    encoded cursor
+    Google 
+      (score, doc_id)
+    Instagram 
+      (score, post_id)
+
+Distributed System 
+  Scatter Request
+    Top K from each shard
+  Gather Result
+    Merge and return
+  Use cursor per shard
+
+Example
+  Google Search
+    Run Search 
+    Got 100 from 10 Nodes
+    Merge and Rank 
+    Display Top 10
+    Next
+      Could be stateless with cursor
+      stateful with TTL
+    
+  Instagram Scroll
+    Pre-computed due to Fan-Out on Write 
+    Fetch few and Cache 
+    Fetch next as per cursor
+
+
