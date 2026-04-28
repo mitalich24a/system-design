@@ -58,7 +58,21 @@ Navigation
   4) Tile Loading
   5) Find Top-K paths
   6) ETA for each using traffic live and historic data, and using ML
-  7) Rank each and return 
+  7) Rank each and return
+
+  Data Transfer in session 
+    Speed 30km/h 
+    1 image => 200m * 200m => 100 KB
+    25 images for 1000m * 1000m => 2.5 MB
+
+    per hour = 2.5 MB * 30 
+    per min = 2.5 MB * 30 / 60
+
+  CDN Traffic 
+
+    1B * 5 * 1.25 MB = 6.25 Billion MB per day 
+    distributed evenly by no of POP
+    
 
 Location 
   1) Client → Sends Location every few seconds
@@ -74,6 +88,11 @@ Location
 
   3) Kafka for down-streaming service
 
+  4) QPS
+      1B * 5 * 60 / 10^5 = 3 M
+      Periodic 15sec = 200 K
+      Peak QPS = 5 * 200 K = 1 M
+
 
 Map-Rendering
   Pre-generated images at zoom level
@@ -87,5 +106,3 @@ Adaptive ETA
   Impacted tile due to traffic is part of route or not
   From src tile to destination tile
     Increase routing level
-
-
