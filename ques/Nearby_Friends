@@ -1,0 +1,76 @@
+Find all nearby friends from user current location
+
+GeoSpatial Data
+  Dynamic
+    Online
+    Offline 
+    Moving
+
+  Real Time Update
+
+A Person will have many friends online at a time, so both of them should know about each other.
+
+Communication 
+  Peer-Peer
+  Via Common Server
+    2 Way for Real time update
+      WebSocket
+
+Event Update
+  Whenever anyone location is changed, update all its friends
+  Pub/Sub
+    Pub when user changes every 30sec
+    Sub get notified when friends location is updated
+    Redis
+      Create a dedicated channel for each user 
+
+Services
+  WebSocket Server
+  User Server
+
+Data
+  Cur/Most Recent Loc
+    ID, Lat, Lon
+    Fast Read-Write
+      Redis Cache 
+      TTL
+  UserProfile
+    ID, Name, Friends List
+    Sql or NoSql
+    
+  Location  History
+    ID, Lat, Lon, TimeStamp
+    Heavy Write and Scale
+      Casandra
+
+API
+  Init Connect
+    Pub its location
+    Sub to all friends
+  Location Update
+  Get Location upadates
+  Sub/UnSub to Friend
+    callback
+
+Numbers
+  Users 100M
+  Friends 400
+  Concurrent User 10%
+  Location update once in 30sec
+
+  User updatin its location(QPS)(Pub) : 100M * 10% / 30 = 334K
+      
+  User update to be sent(Sub) = 334K * 400 * 10% = 14 M
+      CPU Bottleneck => add more Redis server
+
+Distributed Redis Pub/Sub
+  Sharding by ID
+  Service Discovery
+  Consistent Hashing
+    Resize
+      Re-Sub
+        do at low impact time
+
+
+user -> LB -> WebSocketServer -> Redis
+user -> LB -> APIServer -> DB
