@@ -1,0 +1,91 @@
+Provides 
+  Direction & Navigation
+  Show Satellite images
+
+GeoCoding
+  address → (lat, lon)
+  Fast Read, Write 
+    Redis
+
+GeoHash
+  (lat, lon) → string
+  Finds near by using prefix matching
+
+Tiles
+  Break world into small fixed regions
+
+  Map
+    Stored in S3 and cached at CDN
+    Resolution 
+      1-21
+    Format
+      Raster(PNG)
+      Vector
+        Rendered on client using WebGL
+    Tile Creation
+      GeoHash/S2/QuadTree
+
+  Route
+    Roads : Edge
+    Intersection : Node
+    Tile : Break road network in to managable unit
+    Stored in S3 and cached aggressively at Service
+
+    Tile Creation
+      Tile processing service
+        name, country, lon, lan -> graph DS @ 3 resolution
+      organise by geo-hashes
+    
+    Road Hierarchy
+      for cross country route, it doesnt make sense to take local route tile
+      Level 1 → Local roads
+      Level 2 → Arterial roads
+      Level 3 → Highways
+  
+      Reduces search space drastically
+
+Graph
+  Nodes Intersection
+  Edges Roads
+
+  A* 
+  Dijistra
+
+Navigation
+  1) Input Source, Destination
+  2) GeoCoding
+  3) GeoHashing
+  4) Tile Loading
+  5) Find Top-K paths
+  6) ETA for each using traffic live and historic data, and using ML
+  7) Rank each and return 
+
+Location 
+  1) Client → Sends Location every few seconds
+      Live Traffic 
+      Detect new/close Road
+      User behaviour 
+      Accurate ETA
+
+  2) Storage
+      Heavy writes (location updates), availablity > consistency
+        Casandra
+        (userId, timestamp) → (lat, lon)
+
+  3) Kafka for down-streaming service
+
+
+Map-Rendering
+  Pre-generated images at zoom level
+  service return
+    9 urls
+      tile to render 
+      8 surrounding tiles
+
+
+Adaptive ETA
+  Impacted tile due to traffic is part of route or not
+  From src tile to destination tile
+    Increase routing level
+
+
