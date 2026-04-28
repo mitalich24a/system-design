@@ -1,0 +1,51 @@
+Find Places Near User Location
+
+Geo Spatial Data
+
+DataBase
+  Sql
+    PlaceID, Lat, Lon 
+    Near by Place 
+        Lat - X, Lat + X
+        Lon - X, Lon + X
+    Build Index on Lat and Lon
+    Search Query Inefficent
+        Data is 2D and index is 1D
+  
+  Needs
+    Geo Spatial DB
+      https://github.com/mitalich24a/system-design/blob/main/geo-spatial
+
+API
+  GET v1/search
+
+  GET       v1/updatePlace/:id
+  POST      v1/addPlace
+  PUT       v1/updatePlace/:id
+  DELETE    v1/updatePlace/:id
+  
+Service's
+  Buisness Service 
+  Location Service
+
+Data
+  Buisness Data
+      PlaceID, Lat, Lon 
+
+  Geo Spatial 
+      GeoHash, Buisness
+    
+
+Scale
+  Data
+    Buisness 
+      sharding by ID
+
+    Geo Spatial 
+      volume not much
+        Replicates for CPU and Network bottleneck
+
+Data Hydration
+
+
+  
