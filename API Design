@@ -1,0 +1,58 @@
+Contract between Client & Server
+
+URL
+
+Method
+  GET → read
+  POST → create
+  PUT → full update
+  PATCH → partial update
+  DELETE → delete
+
+Request
+  Header
+
+  Params
+    Path
+      Identifies Resource
+    
+    Query
+      Modifies Fetch 
+      Filtering
+      Sorting 
+      Pagination
+    
+    Body
+      Data to Create and Update
+
+Response
+  Status Code
+  Header
+  Body
+
+Header
+  Authorization
+  Content-Type
+  Idempotency-Key
+
+
+Use Path and Query params 
+  For resource identification and filtering
+  Avoid sensitive data
+    Sensitive data should go in headers or body
+
+Status Code
+  200 OK
+  201 Created
+  400 Bad Request
+  401 Unauthorized
+  404 Not Found
+  500 Internal Server Error
+  429 Too Many Requests
+
+Error
+  Status code
+  Header
+  Body
+
+ 
