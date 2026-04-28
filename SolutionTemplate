@@ -1,6 +1,7 @@
 1) Title of System (0 Min)
 
 2) Functional Specs (5 Min)
+      Write Use-Case
       User
         Action
       System
@@ -8,25 +9,26 @@
 
       What user does & how system responds
 
-3) Non-Functional Specs (10 Min)
-          Read
-          Write
+3) Non-Functional Specs (5 Min)
+          Write Constraints
+
+          Read : Write
         
-          Latency
-          Throughput
+          Latency (eg < 200ms)
+          Throughput (QPS/TPS)
         
-          Scalability
-              QPS/TPS
+          Scale
               Data Volume
               DAU
-          Concurrency
+
+          Concurrency 
         
-          Availability
+          Availability (eg 99.99)
         
           Fault Tolerance
         
-          Durability
-          Consistency
+          Durability (eg 99.9999)
+          Consistency (Strong/Eventual/Weak)
         
           Security
       
@@ -44,10 +46,10 @@
               System Evolution 
 
 
-3) E2E Flow (5 Min)
+4) E2E Flow (5 Min)
 
-4) Deep Dive (25 Min)
-      Data
-      API
+5) API Design (5 Min)
 
-5) Summarise (5 Min)
+6) Deep Dive (25 Min)
+
+7) Summarise (5 Min)
