@@ -1,1 +1,93 @@
+Async communication amomg system components
+  based on messages
+  producer/Consumer pattern
+
+Msg 
+  Key
+  Value
+  topic
+  timsestamp
+  size
+  crc
+
+Message Feature
+  Consumption
+    Once
+    Repeated
+  
+  Ordering 
+  
+  Retention
+      Long
+  
+  Semantic
+    atleast once
+    atmost once
+    exactly once
+
+Topic 
+  Organise msg
+  Meta Data
+    Config 
+      ID
+      Name
+      No of partition
+      Retention period 
+      replicas
+    KV Store
+
+Consumer Group
+  Repeated consumption by diff group by own offset 
+  once with in group by any consumer of group 
+
+Msg Storage
+  Read:write = 1:1
+  QPS high and latency low, throughput high
+  WAL on disk 
+    Batch 
+    MMAP
+  Fixed size file 
+    1 active file up to a size than new file is created
+
+State Storage
+  offset of each consumer group on each partition 
+  K-V store
+
+Scale
+  Too many Topic or Too many msg in a topic 
+  Partition on Broker
+
+Partition
+  Subset of msg for topic
+  Add
+    Consumer rebalancing
+  Remove
+    Decommission
+
+Broker 
+  Machine that may hold multiple Partition
+
+E2E
+  Producer -> Routing Service (Which replica) -> Partition -> Broker -> appends
+  Consumer -> Routing Service (Which replica) -> Partition -> Broker -> read from offset
+
+
+Replication
+  Distribution plan
+    Broker add/remove
+    Leader Selection
+  config ACK
+  ISR
+
+Consumer rebalancing
+  Consumer owns which partition 
+  Chnages
+    New 
+    Leaves 
+    Crash 
+    Partition Changes
+
+
+Delay and Scheduled msg
+Msg Filtering
 
