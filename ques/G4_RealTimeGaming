@@ -1,1 +1,51 @@
+User Play game, show real time Ranking and Score
 
+API 
+GET v1/score
+GET v1/score/{userID}
+POST v1/score/{userID}
+
+DataStore Needs 
+  Read
+  Write 
+  Sort
+  Scalable
+
+SQL
+  ORDER BY column1 [ASC|DESC]
+  Not efficent
+
+Redis Sorted Set 
+  User : Score = KV 
+  Score : User = Skip List
+
+  ZDD
+  ZINC
+  ZRANK
+  ZRANKRANGE
+
+Scale 
+  DAU 5M
+  QPS 50 
+  User play 10 games
+  Peak QPS 50 * 10 * 5
+  
+  Data Voulume 
+    Key = 24 bytes, value 2 bytes
+    26 bytes * 5M * 5 = 625MB
+
+100X Scale 
+  Sharding 
+  Redis 
+    Fixed Partition/Bucket as per Score 
+    Based on Hash
+      Scatter and Gather for Ranking
+
+No-SQL DB 
+  PK GameID#{month-year}
+  SK Score#{UserID}
+
+Percentile Instead of Rank 
+  Run Cron Job to decide Percentile and Relavtive Score
+
+ServerLess Arch for APIs
