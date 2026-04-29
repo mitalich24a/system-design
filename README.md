@@ -10,3 +10,9 @@ Revisit and revise these until they become second nature.
 The goal is to internalize these building blocks so well that, 
 when faced with a new problem, you can confidently compose a solution from first principles.
 
+Strong candidates don’t recall designs. They compose them
+1) Learn vocabulary
+2) Do core systems
+3) Extract patterns
+4) Practice unfamiliar problems
+
