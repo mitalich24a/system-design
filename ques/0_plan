@@ -1,0 +1,22 @@
+Revision Plan Per Day 
+25 + 4 (New)  
+
+Divide in 4 slots 
+6 + 1(New)
+
+S1      11 - 1
+S2      2:30 - 4:30
+S3      6 - 8
+s4      9 - 11
+
+For 9 Days
+Day    S1    S2    S3    S4
+D1    (c f) (a h) (b d) (e g)
+D2    (g b) (d a) (c e) (h f)
+D3    (f d) (h b) (a g) (c e)
+D4    (b g) (h e) (c a) (d f)
+D5    (d h) (f c) (b e) (a g)
+D6    (g e) (a d) (h b) (c f)
+D7    (f b) (e g) (d h) (a c)
+D8    (e f) (c h) (a b) (d g)
+D9    (g c) (e d) (h a) (b f)
