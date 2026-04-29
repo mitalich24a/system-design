@@ -16,3 +16,5 @@ Strong candidates don’t recall designs. They compose them
 3) Extract patterns
 4) Practice unfamiliar problems
 
+
+System Design + Failure Analysis + Tradeoffs
