@@ -17,4 +17,5 @@ Strong candidates don’t recall designs. They compose them
 4) Practice unfamiliar problems
 
 
+Don’t just build the system; show how it survives a year in production
 System Design + Failure Analysis + Tradeoffs
