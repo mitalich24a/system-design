@@ -1,0 +1,50 @@
+1. Distributed Tracing (Google Dapper)
+2. Crypto Exchange matching engine
+3. Global DNS Resolution system
+4. Collaborative Editor like Google Docs
+5. Distributed Lock Manager
+6. YouTube Ingestion pipeline like YouTube
+7. Multi-Region Load Balancer
+8. Fraud Detection system
+9. Zero-Downtime Migration (10TB monolith to microservices)
+10. Proximity Service
+11. Subscription Billing system
+12. CDN Design
+13. Leader Election using consensus
+14. Image Proxy optimization service
+15. Global Rate Limiter
+16. Ticketing System (no oversell)
+17. Data Warehouse Ingestion system
+18. Push Notification system
+19. Deployment System (canary + rollback)
+20. Privacy-Preserving Analytics
+21. Inventory Management system
+22. Search Indexer
+23. Configuration Management like Google Chubby
+24. Log Aggregation system
+25. Music Recommendation system
+26. Cloud Storage Gateway
+27. Digital Wallet system
+28. Real-time Metrics Dashboard
+29. Service Discovery system
+30. Region-Level Failover
+31. Ad-Bidding (RTB system)
+32. Distributed File System
+33. Short-form Feed like YouTube Shorts
+34. Secret Management system
+35. A/B Testing Framework
+36. Network Topology Visualizer
+37. Stock Trading matching engine
+38. Top-K Frequent Elements in stream
+39. Web Crawler system
+40. Cost Optimization architecture
+41. Google Photos Search like Google Photos
+42. Message Queue (Pub/Sub)
+43. Live Streaming system
+44. Recommendation Cache
+45. Ad Budget Management
+46. Copyright Detection system
+47. Health Monitoring dashboards
+48. Public API Platform
+49. Zero-Trust Access system
+50. Distributed Job Scheduler (100M+ tasks exactly-once)
