@@ -1,0 +1,50 @@
+Clock Drift: Use logical clocks (vector clocks) or TrueTime to establish causality instead of relying on server timestamps
+Zombie Leaders: Use fencing tokens (monotonically increasing version) so storage rejects stale leader writes
+Dual Writes: Use transactional outbox or CDC to keep DB and queue in sync atomically
+Write Skew: Use serializable isolation or application-level locks (SELECT FOR UPDATE)
+Phantom Reads: Use range locks or snapshot isolation with conflict detection
+Lost Updates: Use optimistic concurrency control (OCC) with version checks
+Read-after-Write Lag: Use session stickiness or version tracking to force fresh reads
+Out-of-Order Events: Use sequence numbers and re-sequencing buffer on consumer side
+Idempotency Failure: Use idempotency keys stored in TTL-backed store (e.g., Redis)
+Silent Data Corruption: Use end-to-end checksums (Adler-32, CRC32) at application level
+Celebrity Problem: Use adaptive sharding or random suffixes to distribute hot keys
+Thundering Herd: Use request collapsing so only one request hits DB
+Cache Penetration: Use Bloom filters to check key existence before DB hit
+Cache Stampede: Use probabilistic early expiration or background refresh
+Hot Shards: Use consistent hashing with virtual nodes
+N+1 Queries: Use batch APIs or DataLoader pattern
+Large Objects: Store blobs in object storage (S3/GCS) and keep pointers in DB
+Deep Pagination Offset: Use keyset (cursor-based) pagination instead of OFFSET
+Connection Pool Exhaustion: Use connection proxies (PgBouncer) and async I/O
+Slow Loris / WebSocket Drain: Use edge proxies (Envoy/Nginx) to terminate connections
+Cascading Failure: Use circuit breakers to isolate failing services
+Retry Storms: Use exponential backoff with jitter and client-side throttling
+Single Point of Failure: Use multi-zone/multi-region deployment with global load balancing
+Split Brain: Use quorum-based consensus (Raft/Paxos)
+Dependency Cycle: Design degraded mode to allow partial startup
+Ephemeral Port Exhaustion: Use keep-alive and increase OS port range
+DNS Caching Issues: Use service discovery or sidecar proxies with health checks
+Poison Pill Messages: Use dead letter queues (DLQ) with max retry limits
+Deadlocks: Enforce lock ordering or use try-lock with timeout
+Circuit Breaker False Positives: Tune using percentile latency (P99)
+Schema Migration Lockup: Use online schema change tools (gh-ost, pt-online-schema-change)
+Backward Incompatibility: Deploy in phases (read old+new → migrate → read new)
+Forward Incompatibility: Use additive schema changes only
+Logging Disk Full: Use log rotation and centralized logging (ELK, Stackdriver)
+Configuration Drift: Use IaC (Terraform) and GitOps
+Secrets Expiration: Use automated secret rotation (Vault, Secret Manager)
+Cold Start Latency: Maintain warm instances or provisioned concurrency
+Stateful Failover Loss: Use persistent volumes (PV/PVC)
+Background Job Backlog: Use priority queues
+Lack of Backpressure: Use reactive streams or rate limiting
+GDPR / Erasure: Use crypto-shredding (delete encryption keys)
+Data Sovereignty: Use cellular architecture for region-specific storage
+PII Leakage: Use log sanitization and DLP scanning
+Integer Overflow: Use 64-bit integers (BigInt) for IDs/counters
+Zip/XML Bomb: Enforce payload limits and resource constraints
+API Rate Limit Bypass: Use authenticated (API key-based) rate limiting
+SLA Breach: Track error budgets and halt feature work if exceeded
+Replay Attacks: Use nonce + timestamp in signed requests
+Large Payload Timeouts: Use multipart/resumable uploads
+Noisy Neighbor: Use resource quotas and strong isolation (cgroups/K8s)
