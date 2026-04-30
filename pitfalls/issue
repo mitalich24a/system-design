@@ -1,5 +1,101 @@
-1. Time issues
-2. Hotspot / scale issues
-3. Traffic amplification
-4. Data correctness
-5. Failure handling
+⏱️ Time & Ordering
+  Clock drift
+  Event time vs processing time mismatch
+  Out-of-order events
+  Monotonic vs wall clock misuse
+  Time-based sharding hotspot
+  TTL inconsistency across nodes
+  DST / leap second bugs
+
+🔁 Concurrency & Transactions
+  Lost updates
+  Write skew
+  Phantom reads
+  Dirty reads
+  Non-repeatable reads
+  ABA problem
+  Double spending
+  Deadlocks
+  Race conditions (TOCTOU)
+  Partial failure in batch writes
+
+📡 Distributed Systems
+  Network partitions
+  Split brain
+  Zombie leaders
+  Replica lag
+  Inconsistent read-after-write
+  Quorum misconfiguration
+  Fan-out explosion
+  Tail latency amplification (p99)
+  Coordinated omission in metrics
+
+💾 Data Layer / Storage
+  Dual writes inconsistency
+  Secondary index inconsistency
+  Hot partitions (bad sharding key)
+  Sequential key hotspot
+  Write amplification (LSM compaction)
+  Large row/document size limits
+  Unbounded scans
+  Pagination deep offset
+  Silent data corruption
+
+🚀 Caching
+  Cache stampede
+  Thundering herd
+  Cache penetration
+  Cache inconsistency after write
+  Stale cache poisoning
+  Negative caching errors
+  Wrong eviction policy (LRU/LFU mismatch)
+
+📬 Messaging / Queues
+  Message duplication
+  Message loss
+  Out-of-order delivery
+  Poison pill messages
+  Consumer lag
+  Rebalancing storms
+  Exactly-once assumption failure
+
+🔥 Scalability & Performance
+  Hot keys (celebrity problem)
+  Hot shards
+  N+1 queries
+  Connection pool exhaustion
+  Slow queries under load
+  Large payload timeouts
+  Backpressure absence
+  Load imbalance
+
+⚙️ Reliability & Availability
+  Cascading failures
+  Retry storms
+  Circuit breaker misconfiguration
+  Single point of failure
+  Dependency cycles
+  Exhaustion of ephemeral ports
+  DNS caching issues
+
+🚢 Deployment & Operations
+  Schema migration lockups
+  Backward incompatibility
+  Forward incompatibility
+  Config drift
+  Logging disk full
+  Secrets expiration
+  Cold start latency
+  Autoscaling feedback loops
+  Health check flapping
+
+🔐 Security & Real-world
+  PII leakage
+  Replay attacks
+  Idempotency key reuse
+  Rate limit bypass
+  Multi-tenant isolation failure
+  Data sovereignty violations
+  GDPR deletion gaps (logs/backups)
+  Integer overflow
+  Zip/XML bomb
