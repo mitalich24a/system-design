@@ -1,259 +1,208 @@
-## **Flashcards: Problem → Signal → Fix**
 
-**1**
 Clock Drift
 → Events out of order
 → Logical clocks / TrueTime
 
-**2**
 Zombie Leaders
 → Old leader still writing
 → Fencing tokens
 
-**3**
 Dual Writes
 → DB + queue inconsistency
 → Transactional outbox / CDC
 
-**4**
 Write Skew
 → Invalid combined state
 → Serializable isolation / locks
 
-**5**
 Phantom Reads
 → New rows in same txn
 → Range locks / snapshot isolation
 
-**6**
 Lost Updates
 → Overwritten writes
 → OCC (version check)
 
-**7**
 Read-after-Write Lag
 → Stale user reads
 → Session stickiness
 
-**8**
 Out-of-Order Events
 → Wrong processing order
 → Sequence numbers + buffer
 
-**9**
 Idempotency Failure
 → Duplicate actions
 → Idempotency keys
 
-**10**
 Silent Data Corruption
 → Undetected errors
 → Checksums
 
----
-
-**11**
 Celebrity Problem
 → Hot shard
 → Adaptive sharding
 
-**12**
 Thundering Herd
 → Spike after cache expiry
 → Request collapsing
 
-**13**
 Cache Penetration
 → DB hit for missing keys
 → Bloom filter
 
-**14**
 Cache Stampede
 → Duplicate recomputation
 → Early expiration
 
-**15**
 Hot Shards
 → Uneven load
 → Consistent hashing
 
-**16**
 N+1 Queries
 → Too many DB calls
 → Batch APIs
 
-**17**
 Large Objects
 → Size limit exceeded
 → Blob storage
 
-**18**
 Deep Pagination
 → Slow large offsets
 → Keyset pagination
 
-**19**
 Connection Exhaustion
 → DB timeouts
 → Connection pooling
 
-**20**
 Slow Loris
 → Idle connections
 → Edge proxy
 
----
-
-**21**
 Cascading Failure
 → Failure spreads
 → Circuit breakers
 
-**22**
 Retry Storms
 → Traffic surge
 → Backoff + jitter
 
-**23**
 SPOF
 → System dependency risk
 → Multi-region setup
 
-**24**
 Split Brain
 → Multiple leaders
 → Quorum consensus
 
-**25**
 Dependency Cycle
 → Startup failure
 → Degraded mode
 
-**26**
 Port Exhaustion
 → No new connections
 → Keep-alive
 
-**27**
 DNS Issues
 → Dead instance hits
 → Service discovery
 
-**28**
 Poison Pill
 → Consumer crash loop
 → DLQ
 
-**29**
 Deadlocks
 → Requests stuck
 → Lock ordering
 
-**30**
 Circuit Breaker FP
 → Healthy blocked
 → Tune P99
 
----
-
-**31**
 Schema Lock
 → DB blocked
 → Online migration
 
-**32**
 Backward Incompatibility
 → New code fails old data
 → Two-phase deploy
 
-**33**
 Forward Incompatibility
 → Old code fails new data
 → Additive schema
 
-**34**
 Logging Disk Full
 → Crash due to logs
 → Log rotation
 
-**35**
 Config Drift
 → Env mismatch
 → IaC / GitOps
 
-**36**
 Secrets Expiry
 → Auth failures
 → Auto rotation
 
-**37**
 Cold Start
 → Latency spikes
 → Warm instances
 
-**38**
+
 Stateful Loss
 → Data lost on restart
 → Persistent storage
 
-**39**
+
 Job Backlog
 → Growing queue
 → Priority queues
 
-**40**
+
 No Backpressure
 → System overload
 → Rate limiting
 
----
 
-**41**
 GDPR Erasure
 → Data still exists
 → Crypto-shredding
 
-**42**
+
 Data Sovereignty
 → Wrong region
 → Regional architecture
 
-**43**
+
 PII Leakage
 → Sensitive logs
 → Log sanitization
 
-**44**
 Integer Overflow
 → ID overflow
 → 64-bit ints
 
-**45**
 Zip Bomb
 → Resource exhaustion
 → Payload limits
 
-**46**
+
 Rate Limit Bypass
 → Abuse continues
 → Auth-based limits
 
-**47**
 SLA Breach
 → Availability drop
 → Error budgets
 
-**48**
+
 Replay Attack
 → Duplicate request
 → Nonce + timestamp
 
-**49**
 Large Payload Timeout
 → Upload failure
 → Multipart upload
 
-**50**
 Noisy Neighbor
 → Resource contention
 → Isolation + quotas
