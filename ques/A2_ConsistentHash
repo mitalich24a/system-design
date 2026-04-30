@@ -1,1 +1,24 @@
+https://medium.com/@mitali209/hashing-system-5561e204257e
+
+Even Distribution of Request/Data
+
+UserID % N
+  Too much Redistribution up on Server Add/Remove
+
+Consistenet 
+  F : Hash Function 
+
+  x = Hash ServerID
+  y = Hash UserID
+
+  Go Clockwise from y to find next x
+
+Add Server
+  K/N anti-clockwise from added server
+  
+Remove Server
+  K/N anti-clockwise from added server
+  
+Virtual Server for even distribution
+  
 
