@@ -1,1 +1,39 @@
+Original URL -> Tiny URL
+Tiny URL click redirect Original URL 
+
+API 
+  POST v1/shorurl
+  GET  v1/geturl
+
+Write QPS   1100
+Read QPS    11000
+Retention   10 Years
+
+Unique 1100 * 10^5 * 365 * 10 = 4.01 T
+Hence 8 Bits for base64
+
+Method
+  Hash
+      MD5
+      SHA1
+      if we take few bits than collison
+          add some another string until not collison
+            use bloom filter 
+
+  Key-Generation Service
+      It keeps unused keys in DB and Cache for faster
+      It is 8 but long and base64 encoded.
+
+      Sharding 
+        Based on KeyID
+      
+      SPOF
+
+  Snowflake ID and base62 conversion  
+        
+
+
+    
+  
+
 
