@@ -1,1 +1,33 @@
+Unique ID in distributed system
 
+Increasing 
+Sortable
+Numerical 
+64 Bit
+
+Methods 
+  Multi-Master
+    K Server 
+    Each Server starts at 1,2,3...K and Inc by K
+
+  UUID
+    128bits
+    includes alpha
+    not increasing with time
+    
+  Ticket Server
+    Centralised inc 
+    SPOF
+    Scale issue
+
+  SnowFlake
+    Divide and Conqure
+      Sections
+        Sign         1
+        TimeStamp    41  Time in MiliSeconds Since EPOCH
+        DataCentre   5
+        Machine      5
+        Seq Number   12  0 Unless another ID in same ms on same server
+
+https://github.com/mitalich24a/system-design/blob/main/code/id_gen.py
+  
