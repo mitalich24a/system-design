@@ -1,0 +1,101 @@
+1. Clock Drift: Local server times diverging, breaking `created_at` ordering
+
+2. Zombie Leaders: A partitioned leader still thinks it’s in charge due to long GC pause
+
+3. Dual Writes: Updating DB + Cache/Queue without distributed transaction → inconsistency
+
+4. Write Skew: Two transactions read same data, update different data → invalid state
+
+5. Phantom Reads: New rows appear between reads in same transaction
+
+6. Lost Updates: Concurrent increments overwrite each other
+
+7. Inconsistent Read-after-Write: Replica lag causes stale reads
+
+8. Out-of-Order Events: Message B arrives before Message A
+
+9. Idempotency Failure: Retrying without unique request ID (e.g., double charge)
+
+10. Silent Data Corruption: Disk errors / bit rot in storage
+
+11. Celebrity Problem: One shard gets massive traffic (hot key)
+
+12. Thundering Herd: Cache expiry → all requests hit DB simultaneously
+
+13. Cache Penetration: Requests for non-existent keys bypass cache
+
+14. Cache Stampede: Multiple threads recompute same cache entry
+
+15. Hot Shards: Poor hashing → uneven distribution
+
+16. N+1 Queries: One request → multiple sequential DB calls
+
+17. Large Objects: Exceeding DB/cache size limits (e.g., 1MB in Memcached)
+
+18. Deep Pagination Offset: Scanning huge data for late pages
+
+19. Connection Pool Exhaustion: Connections held too long
+
+20. Slow Loris / Long-lived Connections: Idle connections consuming resources
+
+21. Cascading Failure: One slow service brings down others
+
+22. Retry Storms: Simultaneous retries overload backend
+
+23. Single Point of Failure (SPOF): No redundancy in critical component
+
+24. Split Brain: Multiple primaries during partition
+
+25. Dependency Cycle: Services depend on each other → startup failure
+
+26. Ephemeral Port Exhaustion: Too many outbound connections
+
+27. DNS Caching Issues: Clients hit stale/dead IPs
+
+28. Poison Pill Messages: Bad message crashes all consumers
+
+29. Deadlocks: Circular waiting on locks
+
+30. Circuit Breaker False Positives: Healthy service marked unhealthy
+
+31. Schema Migration Lockup: Large table locked during ALTER
+
+32. Backward Incompatibility: New code can’t read old data
+
+33. Forward Incompatibility: Old code can’t read new data
+
+34. Logging Disk Full: Excess logs crash system
+
+35. Configuration Drift: Env mismatch (Dev vs Prod)
+
+36. Secrets Expiration: Expired SSL/API keys
+
+37. Cold Start Latency: Slow container startup under load
+
+38. Stateful Failover Loss: Data lost on pod restart
+
+39. Background Job Backlog: Queue grows faster than workers
+
+40. Lack of Backpressure: Producer overwhelms consumer
+
+41. GDPR / Right to Erasure: Data remains in logs/backups
+
+42. Data Sovereignty: Data stored in wrong region
+
+43. PII Leakage: Sensitive data in logs
+
+44. Integer Overflow: ID exceeds 32-bit limit
+
+45. Zip Bomb / XML Bomb: Small input → massive expansion
+
+46. API Rate Limit Bypass: IP rotation to evade limits
+
+47. SLA Miscalculation: Combined availability lower than expected
+
+48. Replay Attacks: Reusing valid requests
+
+49. Large Payload Timeouts: Upload exceeds gateway limits
+
+50. Noisy Neighbor: Shared resource starvation
+
+---
