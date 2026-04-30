@@ -1,1 +1,44 @@
+Key     String
+Value   String, List, Object
 
+API 
+  GET v1/getval
+  POST v1/setval
+
+Single Machine 
+  Will hit Memory, Network Constraints 
+
+Distribute across multiple server
+  Evenly 
+  Minimal movement up on Add/Remove
+
+Replication 
+  Distribute using consistent hasing
+  
+  Rack Aware
+  Zone Aware 
+  Region Aware
+
+  defined in config file 
+
+Consistency
+  Due to replication 
+  Consensus
+    Strong 
+    Eventual 
+    Weak
+
+InConsistency Resolution
+  Vector Clock 
+  Versioning 
+
+Fail-Server Down
+  Detect 
+    Gossip 
+  Temp
+    sloppy quorum
+  Permanent
+    anti-entrpy 
+      sync using merkle/hash tree
+
+client -> cordinator -> node
