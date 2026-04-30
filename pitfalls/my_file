@@ -1,0 +1,20 @@
+Hot Keys
+
+Race Condition in Redis even when its single thread
+  Sorted Set
+  Lua Script
+
+How to Scale
+  Co-ordinator like who decides consistent hashing
+
+Timestamp at same time but on diff server
+  Doesnt match due to clock sync
+    Solution 
+      Network time protocol
+        Logical Clock 
+        Hybrid Logical Clock 
+        Vector Clock 
+
+
+
+  
