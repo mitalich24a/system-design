@@ -1,1 +1,34 @@
+Limit request sent over specifed period.
+
+It can be done for 
+  User 
+  IP 
+
+It can be deployed as 
+  New Service 
+  part of API gateway via Plugin 
+
+Methods
+  Fixed Bucket, fills at some rate 
+  Leaky Bucket, process at some rate
+
+  Fixed Window Counter
+  Sliding Window with logs 
+
+  Sliding Window with counter and distribution of cur and prev window 
+
+client -> api gateway -> api-limiter -> api server
+client -> api gateway -> api-limiter -> 429
+
+DataStore
+  Redis, INCR
+
+Config Rules file
+  RDBMS
+  Cache
+
+Distributed api-limiter
+Centralised Redis 
+Race Condition 
+Sync Issue
 
