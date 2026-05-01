@@ -1,1 +1,51 @@
+Discover new/updated content (Web Page/Image/Video/PDF etc)
+
+No of page    1B per month
+Content Type  HTML
+Retention     5 Years
+Robustness    Handle Edge cases, external content should not break this system
+Politeness    Should not make too many request 
+Extensibilty 
+Scale
+
+Data Store 
+  URL to be downloaded 
+  URL Downloaded 
+  Content Donwloaded
+
+Components 
+  Seed URL
+      Locality
+      Topic
+      Store in DB
+  
+  URL Frontier
+      Fetch URL from DB
+      2 Q
+          Front for priority 
+          Back for politness
+
+      Distribute
+        geo-graphically
+        to reduce load and also faster processing 
+
+  DNS Resolver
+      DNS Resolution -> 10-200ms
+      DNS Cache
+        updated by cron peridically
+
+      Cache robots.txt
+  
+  Downloader
+  Content Parser
+      Validation against malicious
+  Duplicate Content
+      CheckSum Comparison
+  Content Storage
+  
+  URL Extractor
+  URL Filter
+  Duplicate URL
+  URL Storage
+
 
