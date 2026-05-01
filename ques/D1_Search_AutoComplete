@@ -1,1 +1,51 @@
+Auto-Complete Search
 
+Method 1
+    Data Gathering 
+        Freq in Redis
+    Data Querying
+        SQL prefix Query
+
+Method 2
+    Trie
+      char node at each level
+
+    Storage
+        Trie DB
+            Document store like MongoDB
+            KV
+              key = prefix 
+              value = list of childrens
+        Trie Cache
+            Snapshot of DB
+
+    Query Service
+      p len of prefix 
+      c no of childrens at node
+      O(p) + O(c) + clogc
+      Optimise 
+          p is usually small, lets say 50, becomes constant
+          To avoid traverse whole trie
+              cache at each node
+              trade space for time
+
+    Update (Gathering Service)
+        updating trie in real time is not efficent
+            Billion of queries
+            Top res may not change
+
+        Analytic logs 
+            aggregate
+                freqeuncy depending on use-cases
+            async 
+                build trie and store in DB
+  
+Optimisation
+    Ajax Request
+    Browser Caching
+    Data Sampling 
+      
+Distribution 
+    based on char
+    historical pattern
+  
