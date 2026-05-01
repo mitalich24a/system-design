@@ -1,1 +1,44 @@
+Notification 
+  Phone  10 M
+  Email  5 M
+  SMS    1 M
 
+  Scheduled Or Event Driven
+
+Phone
+  IoS
+        -> Apple Push Notification Service ->
+  Android
+        -> FireBase Cloud Messaging ->
+  SMS
+        -> SMS Service like Twilio -> 
+
+Data
+  User Table
+  Device Table
+
+Notification Server
+  Recives Events 
+  Creates Payload
+  Integeration with thrid party plugin
+
+  SPOF
+  Hard to Scale
+  Performacne Bottleneck
+
+Notfication Service
+  AutoScale
+  Rate Limit
+  User Setting OPT-In/Out
+
+Notifcation DB
+  Template
+
+Cache 
+  User, Device, Template Info
+
+Q and Workers Model for each Third Party
+
+
+Duplication    Check EventID
+Failure        Retry
