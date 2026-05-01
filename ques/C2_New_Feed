@@ -1,1 +1,38 @@
+News Feed
+  Constantly Updating List 
+      Photos
+      Videos
+      Likes from People, Pages, Group
 
+User Post -> Update Feed -> Notify Friends
+
+Create Post 
+    Upload Image/Video
+    auth, rate limiting, 
+Scroll on Home Page
+    Keep getting friends post
+
+Services 
+  POST
+    DB & Cache
+  FAN Out
+    Delivering to Friends
+    On Write
+      Update Feed Cache for all friends
+    On Read
+      Curate on Fly for specific friend    
+    
+  Notfication
+    Notify friends
+
+FanOut 
+  Get all friends
+  filter friends
+  put in q (friends_list, post_id)
+  update cache for each friend
+
+Scroll on Home Page
+  GET v1/me/feed
+
+  Get all Post Ids for User
+      Than fetch other details to construct hydrated feed
