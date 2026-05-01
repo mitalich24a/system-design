@@ -1,1 +1,43 @@
+User 
+  Upload
+  Watch
+  Mobile/Laptop 
 
+Scale 
+  User 5M
+  videos Watch 5 per day
+  Video upload 1 by 10% of user
+  video size 300 MB
+
+  Daily Storage = 300 MB * 10% * 5M = 150 TB
+  Daily CDN @ .02 = 5M * 5 * 300MB * .02 = 1.5 M
+
+
+Watch 
+    Client -> CDN
+
+Upload  
+  Storage
+      MetaData
+      Data
+        Original
+        Transcoded
+
+  Cache 
+        Meta Data Cache
+        CDN
+  
+  Transcoding
+      Convert in to multiple format
+
+  E2E
+      Client -> api server -> orignal storage -> transcode storage -> CDN -> MetaData
+
+  Optimization 
+      Split and upload
+      pre-signed url 
+      multiple data centre, closer to user
+      parallelise and async using Q
+
+Transcoding 
+  
