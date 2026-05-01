@@ -1,1 +1,61 @@
+Chat 
+  1 : 1
+  Group 
+  Online Status
+  Multiple Device
 
+User1 -> ChatServer
+User2 -> ChatServer
+
+ChatServer
+    Relays msg
+    Hold if user not online
+
+User to ChatServer
+    HTTP
+      Keep-alive
+    
+      Client initiated
+          Polling 
+          Long polling 
+      
+      Bi-directional 
+          Web Socket
+
+Services 
+    User
+        Signup 
+        Login
+        update profile
+
+        State-Less
+
+    Chat
+      Service Discovery knows all chat server, assign when user connects
+      user connect to chat server WS
+      user1 -> ws1 -> msg sync q -> ws2
+      user1 -> ws1 -> msg sync q -> KV store
+        
+    
+    Online Status
+        client send heartbeat to Presence Server
+        Fanout
+          user publishes to all friends msg sync q
+
+Storage
+  KV Store like casandra each user History
+
+
+Msg 
+    ID
+    from 
+    To 
+    Content
+
+Group Msg
+    Group ID
+    ID
+    from 
+    To 
+    Content
+  
