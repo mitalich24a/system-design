@@ -36,11 +36,13 @@ Services
       user1 -> ws1 -> msg sync q -> ws2
       user1 -> ws1 -> msg sync q -> KV store
         
-    
     Online Status
         client send heartbeat to Presence Server
         Fanout
           user publishes to all friends msg sync q
+
+    Multiple Devices 
+        device maintains cur_max_msg_id
 
 Storage
   KV Store like casandra each user History
@@ -58,4 +60,10 @@ Group Msg
     from 
     To 
     Content
+
+Msg ID 
+  Order of msges
+  Unique with in group
+  Increasing 
+  local seq number generator
   
