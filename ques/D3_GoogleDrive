@@ -1,1 +1,43 @@
+File 
+    Upload
+    Download
+    Sync 
+        Device
+        User
+        Fast
+    Revision
 
+
+Single Server 
+      Directory
+      Folder for each user
+      MetaData 
+            MySQL
+      Data
+            Disk
+
+Scale
+  LB
+  Web Server
+  Meta DB
+  Object Storage
+
+Sync Conflict 
+    First Write Wins
+    Second one gets conflicts and Merge
+
+Upload
+  add file in meta data
+  Split files in block
+        store block of data
+        block checksum in meta data
+  Compression
+  Encryption
+  update meta data
+
+Download
+  client fetch meta data
+  download missing blocks
+
+Notification 
+Offline backup q
