@@ -1,1 +1,47 @@
+Hotel Booking 
+    Book 
+    Pay
+    Price Changes Dynamically
+    10% over booking 
+
+API
+    Hotel        GET POST PUT DELETE
+    Room         GET POST PUT DELETE        
+    Reservation  GET POST PUT DELETE
+
+DataStore
+    Read heavy, write less
+    ACID
+    SQL
+
+Data Model
+    
+    Hotel 
+    Room
+
+    roomRate
+
+    Reservation
+
+    Guest
+
+Concurrency
+    1) Same user click button twice
+        Idempotent API
+
+    2) 2 user booking last 1 room
+        Locks
+          Pessimistic
+          Optmistic 
+          DB constraint & Check
+
+Data Consistency 
+    DB and Cache
+          Write-Through
+          Write-Behind
+          Write-Around
+          Cache Aside, Invalidate
+          CDC
+    
+
 
