@@ -1,1 +1,79 @@
+E-Mail 
+  Send 
+  Recive
+  Fetch 
+  Filter by Read, UnRead
+  Full Text Search
 
+Number 
+  Pax = 1B
+  Recieve Mail Per Day = 40
+  Meta Data Size = 50 KB
+  attachment = 500 KB
+  retention = 1year
+
+Naive
+  E2E
+      client1 -> SMTP-server1 -> storage1
+      SMTP-server1 -> SMTP-server2
+      SMTP-server2 -> storage2
+      SMTP-server2 -> client2
+
+  Storage
+      disk, folder for each user, file for each email
+
+Distributed 
+
+  API 
+    POST v1/sendmsg
+    GET v1/folders
+    GET v1/folders/{id}/msg
+    GET v1/msg/{id}
+
+  Server 
+    WebServer
+      Login, SignUp, UserProfile, APIs
+    RealTime
+      Real Time
+    SMTP Server
+
+  Data
+    MetaData
+      Subject 
+      Body
+      To
+      From
+    Fetch/Search/Mark Read/Mark Unread
+    IOPS
+    Past 15-Days
+    SQL/No-SQL/S3
+
+    Attachment Store
+  Cache
+  Search Store
+  
+Meta Data Sharding 
+    get all folder for users
+        user_id partition key
+    get all emails in folder
+        user_id, folder_id
+
+  Tables
+      folders_by_users
+      emails_by_folders
+      emails_by_user_read
+      emails_by_user_unread
+      attachment
+
+Deliverability 
+    Dedicated IP and good relationship with isp
+    Reputation
+    Feeback processing
+
+Search
+  Indexing & Re-Indexing
+
+  Elastic Search 
+  Custom
+      Disk IO
+    
