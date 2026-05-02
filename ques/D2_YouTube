@@ -33,11 +33,31 @@ Upload
   E2E
       Client -> api server -> orignal storage -> transcode storage -> CDN -> MetaData
 
+Transcoding
+    Bitrate 
+    Container format avi, mov, mp4
+    codecs
+
+    Components 
+        Pre-Processor
+            Split and store in temp storage
+
+        DAG Generation
+            it defines task
+
+        DAG Scheduler
+            put task in resource manager Q
+
+            Task Q
+            Worker Q
+            Running Q
+  
+            Task Scheduler
+                    pick task and worker and put in running q
+
   Optimization 
       Split and upload
       pre-signed url 
       multiple data centre, closer to user
       parallelise and async using Q
-
-Transcoding 
-  
+      only popular content at CDN
