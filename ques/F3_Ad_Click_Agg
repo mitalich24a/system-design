@@ -1,1 +1,50 @@
+Ad Click & Aggregate
+    Last M min
+    Top K ads in last 1 min
+    Filtering
 
+API 
+  GET v1/ads/{:id}/agg_count
+  GET v1/ads/popular_ads
+
+Data
+  Raw Data
+  Aggregated Data
+  Filter Data
+      Dimensions
+      agg based on filters : Star Schema
+
+DataStore
+    Cassandra
+    Influx DB
+
+Log Watcher -> Q -> DB Writer -> Raw Data DB
+Log Watcher -> Q -> Agg Service -> Q -> DB Writer -> Agg DB -> Query Service
+Re-AggService -> Raw Data -> Q -> Agg Service -> Q -> DB Writer -> Agg DB
+
+Time 
+    Event 
+    Processing
+    
+    Watermark
+        Data accuracy
+        inc latency
+
+Agg Service 
+    Framework Map-Agg-Reduce
+
+Scale Q
+  ad_id hashing key
+
+Data duplication
+  record offset
+
+HotKey
+  add more agg nodes
+
+Fault tolerance
+  replay
+  recover from snapshot
+
+Reconcile 
+  
