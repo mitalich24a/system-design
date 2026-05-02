@@ -1,1 +1,48 @@
+Metric
+  Collect
+  Transfer
+  Store
+  alert
+  Visualise
 
+Collect
+    Line Protocol
+        Label 
+        <Value, TimeStamp>
+
+Time Series Data
+Heavy Write 
+Spiky Read
+
+DataBase
+    SQL
+    No-SQL
+          Cassandra
+    Special
+          InfluxDB
+          Promethus
+          Build indexes on Labels, each label must be of low cardinallity
+    Aggregation
+    Encoding 
+    Compression
+    DownSampling
+        Cold Storage
+
+Metric collection
+    Run agent on client
+    Push
+       agent sends data to Metric service
+    Pull
+      list of clients 
+      add/remove
+      many : many = agent : collector
+      
+Metric Service -> Kafka -> Workers
+    Processing data -> DB
+
+Query Service to read from DB
+    Query Service Cache
+
+Alert and Visualise -> Query Service
+
+Alert Config File -> alert manager -> query service -> Alert DB -> kafka -> alter consumer
