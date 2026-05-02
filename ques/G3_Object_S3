@@ -1,1 +1,77 @@
+Object Storage
+    Upload
+    download
+    list
+    Delete
+    versioing 
+    durbale  (6'9)
+    available (4'9)
+    correct
+    api access
+    immutable
 
+Data
+  Small    20%  <1 MB
+  Med      20%  1-64 MB
+  Large    20%  >64 MB
+
+  1 year 100 PB
+
+read:write = 95:5
+
+Inode 
+  meta data
+  data
+
+Upload 
+    Client - LB - IAM - Data Node - Meta Data
+Download
+    Client - LB - IAM - Meta Data - Data Node
+
+Durability
+    Replication
+        Copy at 3-4 places
+        Level
+            Rack, Node, Zone, Region
+    Erasure Coding 
+        Partity blocks 
+        tradeoff btw latency and cost
+
+Correctness
+    CheckSum 
+      at end of each block
+      at end of entire file
+
+Delete Marker for deleted versionx
+Periodic Compaction
+Garbage Collection
+
+Meta Data
+  Bucket Table
+  Object Table
+
+Data
+    Data Routing Service
+          Expose APIs to access object
+          genrtae UUID for write
+    
+    Placement Service
+          Consensus protocol 
+          Maintain Mapping of clusture
+          provide most optmial data node using consistent hashing
+    
+    Data node
+        Read/write from disk
+        replicates to secondary before return
+        sends heartbeat to Placement Service
+
+        store each object in new file
+              too many small
+              inode exhaust
+  
+        merge many objects in a file
+            WAL
+              up on save it writes to read-write file
+            Mapping 
+              object id, offset
+              rockdb
