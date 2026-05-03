@@ -5,4 +5,55 @@ Payment system for E-commerce App
 
 1M per day = 10 TPs = correctness > throughput 
 
+Payment Service Provider
+        PayPal
+        Stripe
+
+Payment Event
+Payment Order
+Payment Service -> DB
+Payment Executor -> DB
+
+Ledger
+    debit, credit, sum of all tran must be 0
+Wallet
+    balance of merchant
+
+API 
+    POST v1/payments
+    GET  v1/payments/{:id}
+Table 
+    Payment Order(s)
+    Payment event
+    payment order
+
+
+PSP Integeration
+        Payment registration uniq by payment order
+        token by PSP
+        client open PSP hosted page with token, redirect-page
+        once payment done it open redirect page
+Reconcilation
+        async
+        PSP sends settlement
+        comapre it with ledger
+Delay
+        PSP notifies via Webhook, 
+        Re-Check after sometime
+
+Duplicate
+    idempotent 
+        
+Fail
+        re-try
+        dead letter q
+
+Exactly 1 delivery
+        at-least once 
+            retry
+        at-most once 
+            idempotent
+
+Consistency
+    replicas, consensus 
 
