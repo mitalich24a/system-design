@@ -1,1 +1,81 @@
+Broker (ZeroDha / ETrade)
+Stock Exchange (NSE / NYSE)
+
+Req    
+    100 Symbols/Stocks
+    Place Limit order
+    Cancel order
+    Recieve match trades in real time
+    View Real Time all buyers and Sellers
+
+Broker - Exchange
+
+Exchange 
+    Gateway
+        Auth
+        RateLimit
+        Input validation
+
+        Colo Engine : Rented by broker in Exchange Data Centre
+
+    Order Manager
+        do risk checks
+        wallet check
+
+    Sequencer
+        Stamp Incoming
+    
+    Matching Engine
+        generates stream of fills
+        if matching found,
+            emits 2 exes, called fills
+            each for buy & sell
+    
+    Sequencer
+        Stamp fills 
+
+    Market Data Publisher
+        Recieve stream of exe from matching engine
+        Builds market data 
+              chart
+              order book
+        Persist
+        Sends to data service
+
+    DataService
+        Broker connect to data service
+
+    Reporting 
+        Complaince 
+        Tax
+        Both incoming and outgoing
+
+API
+    POST v1/order
+    GET  v1/executions
+    GET v1/marketdata/orderbook/L2
+    GET v1/marketdata/candles
+
+Data Model
+    Product
+    Order
+    Exceutions
+
+    OrderBook
+        Constant Lookup
+        Fast add/cancel/execute
+        Fast update
+
+        DLL and Map
+        
+    CandleStick Chart
+
+
+Run critical path on Single Server
+
+    application loop
+          single thread pinned to fixed CPU core
+    Mmap
+
+
 
