@@ -1,1 +1,82 @@
+Wallet like GPay
 
+TPS = 1M
+Reproducbility 
+
+API
+  POST v1/wallet/balance_transfer
+
+Recieved tranfer command
+Validate transfer command 
+Exe 2 instruction 
+    Debit, Credit
+    Single Atomic Transction
+
+Redis 
+  userID, amount
+  Sharding due to 1M TPS
+  Redis clusture and Zookeeper
+  Problem Atomicity 
+
+Distributed Transction on SQL
+      2 Phase Commit
+          1) Each Node try to acquire Lock 
+          2) If all than commit else rollback 
+      Try-Confirm/Cancel = transcation by compensation
+          1) try to reservce resource
+          2) if all yes than commit else rollback
+      Diff 
+          1) locks held
+          2) db agnostic
+          3) out of order command delivery hence exe
+      Saga
+          Linear order of exe and compensating
+          Choreography 
+              Subscribe to each other
+          Orchestration
+              Co-ordinator
+      diff 
+          Latency
+
+Event Sourcing
+    StateMachine
+        Deterministic
+        Validate command and generate events 
+        Apply events to udpate state
+            Command -> Kafka
+            Event -> Kafka
+                Immutable
+            State -> MySql
+
+CQRS
+  read only state machine to build views
+  Pull
+  reverse proxy, that pushes when any change happens
+
+
+Peformant Event Sourcing
+    Command and Event
+        Save on local disk than kafka
+        WAL
+          on disk command and event file
+        Mmap
+          cache in memory
+    State
+        Local disk than Mysql 
+        RockDB & SQLlite
+
+    Snapshot 
+        statemachine to not start from begning 
+        snapshot and S3
+
+Reliablitlty
+        Event data is immutable and determinstic hence use to rebuild
+
+Replication of event
+        Raft conssenus algo
+
+
+client - saga cordinator - partition leader - saga cordinator - partition leader 
+
+partition's event sourcing framework 
+    update read path using CQRS
