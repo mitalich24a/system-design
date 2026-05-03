@@ -38,3 +38,5 @@ High RPS Bottleneck
   NIC, 
   Connection limits (file descriptor)
 --------------------------------------------------------------------------------
+
+Concurrency = Throughput × Latency
