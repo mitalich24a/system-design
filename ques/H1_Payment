@@ -1,1 +1,8 @@
+Payment system for E-commerce App
+    Order placed and click to Pay
+    Do payment 
+    Fan In and Fan Out
+
+1M per day = 10 TPs = correctness > throughput 
+
 
