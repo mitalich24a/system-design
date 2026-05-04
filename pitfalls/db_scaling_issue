@@ -1,3 +1,4 @@
+
 Data 
   userID, PhotoID, TimeStamp
 Get user photo in last 5 mins
@@ -77,6 +78,9 @@ Event streaming pipeline
     handling traffic spikes
     preventing system overloaing
 
-
+Heavy Read
+Heavy Write 
+Data Changing Rapidly
+Access to Frequent Data
 
     
