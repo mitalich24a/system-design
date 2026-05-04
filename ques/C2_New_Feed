@@ -36,3 +36,29 @@ Scroll on Home Page
 
   Get all Post Ids for User
       Than fetch other details to construct hydrated feed
+
+
+
+GSI
+
+Entities 
+  User 
+  Photo
+  Follow
+
+Dynamo DB
+  Post 
+      ID
+      content
+      createdat
+      createdby
+  
+  User
+      id(PK)
+      followers(SK)
+      following(GSK) 
+  
+  Feed
+      userid
+      craetedat
+      postid
