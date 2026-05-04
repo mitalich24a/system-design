@@ -1,0 +1,82 @@
+Data 
+  userID, PhotoID, TimeStamp
+Get user photo in last 5 mins
+
+SQL
+    Index on (userID,TimeStamp)
+
+Scale Issue 
+      HOT KEY : 1 query scale 
+          one user has many photos
+      
+      No of query increases drastically 
+          Contention for CPU, I/O
+                Context Switch
+          Limited no of threads
+
+
+Solution 
+      Distribute traffic 
+            Seperate Read and Write Replicas
+      Avoid recomputation 
+            Caching SQL Query Result with TTL
+            may not be relevant if data is changing rapidly 
+      Vertical Scaling 
+            inc cpu core, RAM, Disk
+            eventaully hit ceiling
+      Sharding
+            Mangament 
+            PhotoID
+                break user level queries
+                Scatter Gather
+            UserID
+                HotKey
+
+Change Storage
+
+Redis
+    Redis Sorted Set
+    Redis Clusture
+    
+    key userID
+    Score TimeStamp
+    Value PhotoID
+
+    HotKey
+      key userID:{shardID}
+    Last 5 mins
+      key userID:{timeslice}
+
+    All in memory 
+        so as data grow we need to delete hence just for HOT data
+
+
+  NO-SQL
+      Scale + Persist
+
+      Good for Read Scale
+          Partition Key = userId
+          Sort Key = timestamp
+
+          but HOT KEY issue
+      
+      Good for write Scale
+          Daily Distribution
+          Partition Key = userId#YYYYMMDD
+
+        Optimizes writes But Read becomes Scatter Gather
+
+Precomputed feeds in Redis
+      FanOut on Write 
+
+
+      
+Event streaming pipeline
+    buffering
+    decoupling services
+    handling traffic spikes
+    preventing system overloaing
+
+
+
+    
