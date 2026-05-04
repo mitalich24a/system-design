@@ -27,3 +27,47 @@ D6    (g e) (a d) (h b) (c f)
 D7    (f b) (e g) (d h) (a c)
 D8    (e f) (c h) (a b) (d g)
 D9    (g c) (e d) (h a) (b f)
+
+____________________________A____________________________________
+
+        Design a Rate Limiter
+        Consistent Hashing
+        Design a Key-Value Store
+_____________________________B___________________________________
+
+        Design a Unique ID Generator in Distributed Systems
+        Design a URL Shortener
+        Design a Web Crawler
+
+___________________________C_____________________________________
+
+        Design a Notification System
+        Design a News Feed System
+        Design a Chat System
+___________________________D____________________________________
+
+        Design a Search Autocomplete System
+        Design YouTube
+        Design Google Drive
+__________________________E______________________________________
+
+        Proximity Service (Yelp / nearby business search)
+        Nearby Friends
+        Google Maps
+____________________________F____________________________________
+
+        Distributed Message Queue
+        Metrics Monitoring and Alerting System
+        Ad Click Event Aggregation System
+_____________________________G___________________________________
+
+        Hotel Reservation System
+        Distributed Email Service
+        S3-like Object Storage System
+        Real Time Gaming
+_____________________________H___________________________________
+
+        Payment System
+        Digital Wallet
+        Stock Exchange
+________________________________________________________________
