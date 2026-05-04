@@ -28,7 +28,7 @@ Notification Server
 
 Notfication Service
   AutoScale
-  Rate Limit
+  Rate Limit -> Redis
   User Setting OPT-In/Out
 
 Notifcation DB
@@ -40,5 +40,5 @@ Cache
 Q and Workers Model for each Third Party
 
 
-Duplication    Check EventID
+Duplication    Check EventID -> DB
 Failure        Retry
