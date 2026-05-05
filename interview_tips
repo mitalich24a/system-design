@@ -1,0 +1,19 @@
+For Every Arrow 
+    1) How its triggred
+    2) What if this fails
+          retry
+          lost
+          duplicate
+    3) Delivery gurantee
+          atleast 1
+          best effort
+
+
+Say like pro
+    Control Plane
+        Auth 
+        Api Server
+    
+    Data Plane
+        DB
+        Storage
