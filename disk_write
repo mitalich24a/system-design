@@ -1,0 +1,23 @@
+UPDATE user
+SET name = 'New Name'
+WHERE user_id = 123;
+
+No Index 
+    Check every row and update
+
+Btree Index
+    Random access write hence take sometime
+
+LSM tree
+    append to WAL
+    update in-memory in SSTable
+    SSTable is flushed to disk in sometime
+
+    Read
+      Read from in-memory, if not
+      Check in SSTable file on disk, return from latest file 
+
+    Async compaction 
+      merge SSTables on Disk and keep single merged update copy.
+
+    uses bloom filters for faster look up
