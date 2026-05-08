@@ -1,0 +1,18 @@
+Replication 
+    Replication Factor : No of Replicas
+    ISR : Min Replicas to be Insync at any point 
+
+    Replica Distrinution Plan
+    Managed by 
+        Co-ordination Service
+            Leader send heartBeat to Co-ordinator and if Leader crashes, assign new
+        Election
+
+
+ConsumerRebalancing 
+    Partition Distrinution Plan
+        Managed by 
+        Co-ordination Service
+            Leader send heartBeat to Co-ordinator and if Leader crashes, assign new
+        Election
+    
