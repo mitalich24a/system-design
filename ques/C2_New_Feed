@@ -48,10 +48,15 @@ Entities
 
 Dynamo DB
   Post 
-      ID
+      ID PK
       content
-      createdat
+      createdat SK
       createdby
+  Post GSI 
+      ID 
+      content
+      createdat SK
+      createdby PK
   
   User
       id(PK)
@@ -66,4 +71,7 @@ Dynamo DB
   Follow
       followers(PK)
       following(SK)
+
   Follow GSI
+      followers(SK)
+      following(PK)
