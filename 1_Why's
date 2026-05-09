@@ -1,0 +1,348 @@
+# Database Selection
+
+## RDBMS
+- I can use RDBMS or NoSQL here.
+- I am choosing RDBMS because we need:
+  - Strong consistency
+  - Transactions
+  - Joins
+  - Structured relationships
+
+## NoSQL
+- I am choosing NoSQL because we need:
+  - Horizontal scalability
+  - Flexible schema
+  - Very high throughput
+
+## Time Series DB
+- I am choosing a Time Series database because:
+  - Data is append-heavy
+  - Queries are time-based
+  - Efficient range scans and aggregations are needed
+
+## Key-Value Store / DynamoDB
+- I am choosing a key-value store because:
+  - Access patterns are mostly PK lookups
+  - We need predictable low latency at scale
+
+## Wide Column DB
+- I am choosing a wide-column database because:
+  - We expect massive write throughput
+  - Partition-based scaling is important
+
+## Graph DB
+- I am choosing a graph database because:
+  - Relationships are first-class citizens
+  - Traversals are important
+
+---
+
+# Cache
+
+## General Cache
+- I am adding cache to:
+  - Reduce DB load
+  - Improve read latency
+
+## Redis
+- I am using Redis because:
+  - Very fast in-memory reads
+  - Supports TTL
+  - Supports pub/sub
+  - Supports sorted sets
+  - Supports atomic operations
+
+## CDN
+- I am adding CDN because:
+  - Static content can be served closer to users
+  - Reduces origin load
+  - Improves latency globally
+
+## Local Application Cache
+- I am adding local cache because:
+  - It avoids network hops
+  - Frequently accessed data becomes ultra-fast
+
+## Cache Aside
+- I am using cache-aside because:
+  - Application controls cache population
+  - Easy eviction strategy
+
+## Write Through Cache
+- I am using write-through caching because:
+  - Cache and DB stay synchronized
+
+## Write Back Cache
+- I am using write-back caching because:
+  - Better for heavy writes
+  - Delayed persistence is acceptable
+
+---
+
+# Queue / Streaming
+
+## Message Queue
+- I am adding a queue because:
+  - Async processing is needed
+  - Smoothens traffic spikes
+  - Enables retries
+  - Allows independent scaling
+
+## Kafka
+- I am choosing Kafka because:
+  - Durable event streaming
+  - Replay capability
+  - Very high throughput
+  - Partitioning support
+
+## RabbitMQ
+- I am choosing RabbitMQ because:
+  - Reliable message delivery
+  - Advanced routing support
+
+## Dead Letter Queue (DLQ)
+- I am adding DLQ because:
+  - Failed messages can be isolated
+  - Retries become easier
+
+---
+
+# Load Balancing
+
+## Load Balancer
+- I am adding a load balancer because:
+  - Traffic distribution is needed
+  - Improves availability
+  - Prevents server overload
+
+## API Gateway
+- I am adding an API Gateway because:
+  - Centralized authentication
+  - Request routing
+  - Throttling
+  - Monitoring
+
+---
+
+# Scalability
+
+## Horizontal Scaling
+- I prefer horizontal scaling because:
+  - Better fault tolerance
+  - Easier scalability
+
+## Sharding
+- I am using sharding because:
+  - Data distribution is needed
+  - Avoids single-node bottlenecks
+
+## Replication
+- I am using replication because:
+  - High availability
+  - Read scalability
+
+## Auto Scaling
+- I am enabling auto scaling because:
+  - Handles traffic spikes dynamically
+
+---
+
+# Reliability
+
+## Retry
+- I am adding retries because:
+  - Helps recover from transient failures
+
+## Circuit Breaker
+- I am adding a circuit breaker because:
+  - Prevents cascading failures
+
+## Idempotency
+- I am adding idempotency because:
+  - Retries should not create duplicates
+
+## Rate Limiting
+- I am adding rate limiting because:
+  - Protects against abuse
+  - Prevents overload
+
+## Backpressure
+- I am adding backpressure because:
+  - Downstream services should not get overwhelmed
+
+---
+
+# Consistency
+
+## Strong Consistency
+- I am choosing strong consistency because:
+  - Correctness is critical
+
+## Eventual Consistency
+- I am choosing eventual consistency because:
+  - Scalability and availability are prioritized
+
+## Quorum Reads/Writes
+- I am using quorum because:
+  - Balances consistency and availability
+
+---
+
+# Search
+
+## Elasticsearch
+- I am adding Elasticsearch because:
+  - Full-text search is needed
+  - Fast filtering
+  - Fast aggregations
+
+## Bloom Filter
+- I am adding a Bloom Filter because:
+  - Prevents unnecessary DB lookups
+  - Useful for non-existent keys
+
+---
+
+# Real-Time Communication
+
+## WebSocket
+- I am using WebSockets because:
+  - Persistent bi-directional communication is needed
+
+## SSE
+- I am using SSE because:
+  - Primarily server-to-client streaming
+
+## Long Polling
+- I am using long polling because:
+  - Better compatibility fallback
+
+---
+
+# File Storage
+
+## Object Storage
+- I am using object storage because:
+  - Durable
+  - Cost effective
+  - Ideal for large binary files
+
+## Chunk Upload
+- I am using chunk upload because:
+  - Supports resumable uploads
+  - Better for large files
+
+---
+
+# Observability
+
+## Logging
+- I am adding centralized logging because:
+  - Easier debugging
+  - Better operational visibility
+
+## Metrics
+- I am collecting metrics because:
+  - Helps monitor system health
+
+## Distributed Tracing
+- I am adding tracing because:
+  - Easier debugging across microservices
+
+## Alerting
+- I am adding alerts because:
+  - Faster incident detection
+
+---
+
+# Security
+
+## Authentication
+- I am adding authentication because:
+  - User identity verification is needed
+
+## Authorization
+- I am adding authorization because:
+  - Access control is required
+
+## Encryption
+- I am encrypting data because:
+  - Security in transit and at rest is important
+
+## WAF
+- I am adding a Web Application Firewall because:
+  - Protection against common attacks
+
+---
+
+# High Traffic / Celebrity Problems
+
+## Hot Keys
+- I am handling hot keys using:
+  - Replication
+  - Caching
+  - Request spreading
+
+## Request Coalescing
+- I am using request collapsing because:
+  - Multiple identical requests hit backend once
+
+## Precomputation
+- I am precomputing feeds/results because:
+  - Reduces expensive read-time computation
+
+---
+
+# Microservices
+
+## Service Discovery
+- I am adding service discovery because:
+  - Services should dynamically locate each other
+
+## Config Management
+- I am externalizing configuration because:
+  - Easier deployments
+  - Better environment management
+
+## Sidecar Pattern
+- I am using sidecars because:
+  - Handles observability/security separately
+
+---
+
+# Data Processing
+
+## Batch Processing
+- I am using batch processing because:
+  - Large-scale offline computation is needed
+
+## Stream Processing
+- I am using stream processing because:
+  - Near real-time processing is required
+
+## CDC (Change Data Capture)
+- I am using CDC because:
+  - DB changes should propagate asynchronously
+
+---
+
+# System Design Closing Statements
+
+## Tradeoff
+- This design optimizes for:
+  - Scalability
+  - Availability
+
+- While accepting:
+  - Eventual consistency tradeoffs
+
+## MVP
+- For MVP:
+  - I would keep the design simpler
+  - Add complexity gradually as scale grows
+
+## Future Improvements
+- Future optimizations can include:
+  - Better caching
+  - Smarter partitioning
+  - Multi-region deployment
