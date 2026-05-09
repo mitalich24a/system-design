@@ -55,10 +55,15 @@ Dynamo DB
   
   User
       id(PK)
-      followers(SK)
-      following(GSK) 
+      Name
+      Email
   
   Feed
       userid
       craetedat
       postid
+
+  Follow
+      followers(PK)
+      following(SK)
+  Follow GSI
