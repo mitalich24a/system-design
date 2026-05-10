@@ -1,0 +1,6 @@
+Distributed Transction 
+  all changes happen atomically
+
+Dostributed Lock 
+  only 1 update in contention 
+  concurency 
