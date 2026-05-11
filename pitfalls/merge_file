@@ -1,0 +1,51 @@
+Conflict
+  Reject 
+      Base Versioning Mistmach Reject : DB
+  Brute Force Solve Unfair
+      Last Write Wins : NOTES Apps
+      Manual Merge : GIT
+  
+
+  OT/CRDT : Collabrative Doc Google DOC
+
+
+Operational Transformations
+
+  Solves 
+  Conflict 
+  Converge to one point 
+  Cursor/Index/Point by Operations
+
+  Transform incoming operation against concurrent operations
+
+  Operations -> Transform -> Converge 
+
+  Original Hello
+  User1 -> Insert X at pos 0 -> XHELLO
+  User2 -> Insert Y at pos 0 -> YHELLO
+
+  Both Sync -> Both inserted at same position
+
+  If A arrives first, So Insert X at 0 -> XHELLO
+  B's Insert Y at 0 -> Transform -> Insert Y at 1 -> XYHELLO
+  
+  
+CRDT Conflict-Free Replicated Data Type
+  Avoids 
+  conflicts by designing mergeable data structures
+
+  data structure that mathematically converges
+
+  Each Char has uniq ID, 
+  Adding char will give it uniq ID
+
+  Up on merge, Lesser ID comes first
+
+  ID:
+    Replica ID, Timestamp
+
+
+
+
+  
+  
