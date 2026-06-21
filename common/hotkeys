@@ -1,1 +1,8 @@
+Read
+  Replication
+  Local Cache (TTL)
+  CDN
 
+Write
+  Sticky Session
+  Leasing
