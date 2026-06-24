@@ -1,0 +1,12 @@
+Concurrency 
+    Conflict 
+        Resolve 
+            Version
+            Vector clock 
+
+Server Down
+    Gossip Protocol
+
+Data Sync
+    Hinted 
+    Anti-Entropy
