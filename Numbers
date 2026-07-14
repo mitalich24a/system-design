@@ -40,3 +40,19 @@ High RPS Bottleneck
 --------------------------------------------------------------------------------
 
 Concurrency = Throughput × Latency
+
+--------------------------------------------------------------------------------
+
+| Data Type         | Approx Size |
+| ----------------- | ----------- |
+| char              | 1 byte      |
+| boolean           | 1 byte      |
+| int               | 4 bytes     |
+| long/int64        | 8 bytes     |
+| float             | 4 bytes     |
+| double            | 8 bytes     |
+| UUID              | 16 bytes    |
+| timestamp         | 8 bytes     |
+| IP address (IPv4) | 4 bytes     |
+| IP address (IPv6) | 16 bytes    |
+
