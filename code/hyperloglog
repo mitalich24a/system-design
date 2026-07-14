@@ -1,0 +1,29 @@
+import hashlib
+import math
+
+class HLL:
+    def __init__(self, p=4):
+        self.p = p
+        self.m = 1 << p
+        self.reg = [0] * self.m
+
+    def add(self, x):
+        h = int(hashlib.md5(str(x).encode()).hexdigest(), 16)
+
+        bucket = h & (self.m - 1)
+        remaining = h >> self.p
+
+        zeros = len(bin(remaining)) - len(bin(remaining).rstrip('0'))
+        self.reg[bucket] = max(self.reg[bucket], zeros + 1)
+
+    def count(self):
+        z = sum(2 ** (-r) for r in self.reg)
+        return round(0.7213 * self.m * self.m / z)
+
+
+hll = HLL()
+
+for i in range(100000):
+    hll.add(i)
+
+print(hll.count())
