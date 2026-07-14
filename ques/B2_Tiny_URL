@@ -33,7 +33,10 @@ Method
         
 
 
-    
+1K     -> Single DB
+10K    -> Add Cache
+100K   -> Add Replicas
+1M     -> Add Sharding
   
 
 
